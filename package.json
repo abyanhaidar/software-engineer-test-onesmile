@@ -1,0 +1,48 @@
+{
+  "name": "software-engineer-test-onesmile",
+  "version": "1.0.0",
+  "description": "",
+  "main": "main.ts",
+  "scripts": {
+    "start": "nest start --watch",
+    "sequelize-generate": "npx sequelize-cli migration:generate --config src/config/config.js --name",
+    "sequelize-migrate": "npx sequelize-cli db:migrate --config src/config/config.js",
+    "sequelize-revert": "npx sequelize-cli db:migrate:undo --config src/config/config.js",
+    "sequelize-show": "npx sequelize-cli db:migrate:status --config src/config/config.js",
+    "build": "tsc",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/bcrypt": "^5.0.2",
+    "@types/express": "^5.0.2",
+    "@types/node": "^22.15.23",
+    "@types/passport-jwt": "^4.0.1",
+    "@types/sequelize": "^4.28.20",
+    "sequelize-cli": "^6.6.3",
+    "typescript": "^5.8.3"
+  },
+  "dependencies": {
+    "@nestjs/jwt": "^11.0.0",
+    "@nestjs/passport": "^11.0.5",
+    "@nestjs/platform-express": "^11.1.2",
+    "@nestjs/sequelize": "^11.0.0",
+    "@nestjs/swagger": "^11.2.0",
+    "@nestjs/typeorm": "^11.0.0",
+    "bcrypt": "^6.0.0",
+    "class-validator": "^0.14.2",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "express-basic-auth": "^1.2.1",
+    "nats": "^2.29.3",
+    "passport": "^0.7.0",
+    "passport-jwt": "^4.0.1",
+    "pg": "^8.16.0",
+    "reflect-metadata": "^0.2.2",
+    "sequelize": "^6.37.7",
+    "sequelize-typescript": "^2.1.6",
+    "ts-node": "^10.9.2",
+    "typeorm": "^0.3.24"
+  }
+}
