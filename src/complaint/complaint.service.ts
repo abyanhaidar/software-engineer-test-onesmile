@@ -11,7 +11,7 @@ export class ComplaintService {
   ) {}
 
   async create(data: CreateComplaintDto, userId:number): Promise<Complaint> {
-		console.log(userId)
+
     const complaintAttributes:any = {
 			title: data.title,
 			description: data.description,

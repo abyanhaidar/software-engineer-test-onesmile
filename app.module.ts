@@ -6,13 +6,19 @@ import { AppController } from './app.controller';
 import { AppService } from './app.service';
 import { AuthModule } from './src/auth/auth.module';
 import { ComplaintModule } from './src/complaint/complaint.module';
+import { FacilityModule } from './src/facility/facility.module';
+import { FacilityBookingModule } from './src/facility-booking/facility-booking.module';
+import { BookingLog } from './src/facility-booking-log/facility-booking-log.model';
 
 @Module({
   imports: [
     SequelizeModule.forRoot(sequelizeConfig),
-    UserModule,
     AuthModule,
-    ComplaintModule
+    UserModule,
+    ComplaintModule,
+    FacilityModule,
+    FacilityBookingModule,
+    BookingLog
   ],
   controllers: [AppController],
   providers: [AppService],

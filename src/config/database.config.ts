@@ -2,6 +2,9 @@ import { SequelizeOptions } from 'sequelize-typescript';
 import * as dotenv from 'dotenv';
 import { User } from '../user/user.model';
 import { Complaint } from '../complaint/complaint.model';
+import { Facility } from '../facility/facility.model';
+import { FacilityBooking } from '../facility-booking/facility-booking.model';
+import { BookingLog } from '../facility-booking-log/facility-booking-log.model';
 dotenv.config();
 
 export const sequelizeConfig: SequelizeOptions = {
@@ -11,7 +14,7 @@ export const sequelizeConfig: SequelizeOptions = {
   username: process.env.POSTGRES_USER,
   password: process.env.POSTGRES_PASSWORD,
   database: process.env.POSTGRES_DB,
-  models: [User, Complaint],
+  models: [User, Complaint, Facility, FacilityBooking, BookingLog],
   logging: false,
 };
 
