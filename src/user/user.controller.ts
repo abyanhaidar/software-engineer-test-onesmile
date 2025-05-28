@@ -10,8 +10,7 @@ import {
 } from '@nestjs/common';
 import { UserService } from './user.service';
 import { User, UserRole } from './user.model';
-import { CreateUserDto, UpdateUserDto, LoginDto } from './dto/user.dto';
-
+import { CreateUserDto, UpdateUserDto } from './dto/user.dto';
 import { AuthService } from '../auth/auth.service';
 
 @Controller('users')
@@ -30,12 +29,6 @@ export class UserController {
   @Get(':id')
   async findOne(@Param('id', ParseIntPipe) id: number): Promise<User> {
     return this.userService.findOne(id);
-  }
-
-  @Post('login')
-  async login(@Body() body: LoginDto) {
-    const user = await this.authService.validateUser(body.email, body.password);
-    return this.authService.login(user);
   }
 
   @Post()

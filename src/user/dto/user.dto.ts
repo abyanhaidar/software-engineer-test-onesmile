@@ -38,11 +38,3 @@ export class UpdateUserDto {
   @IsOptional()
   role?: UserRole;
 }
-
-export class LoginDto {
-  @ApiProperty({ example: 'user@example.com' })
-  email!: string;
-
-  @ApiProperty({ example: 'yourpassword' })
-  password!: string;
-}

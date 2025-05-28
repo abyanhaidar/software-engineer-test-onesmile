@@ -7,16 +7,15 @@ import { User } from '../user/user.model';
 export class JwtStrategy extends PassportStrategy(Strategy) {
   constructor() {
     super({
-      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(), // reads token from Authorization header
+      jwtFromRequest: ExtractJwt.fromAuthHeaderAsBearerToken(),
       ignoreExpiration: false,
-      secretOrKey: process.env.JWT_SECRET || 'your-secret-key', // match with the key used to sign token
+      secretOrKey: process.env.JWT_SECRET || 'onesmile-abyan', // fill in the secret key
     });
   }
 
   async validate(payload: any): Promise<Partial<User>> {
-    // attach this to req.user
     return {
-      id: payload.sub,
+      id: payload.id,
       email: payload.email,
       role: payload.role,
     };
